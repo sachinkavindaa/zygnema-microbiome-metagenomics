@@ -82,7 +82,7 @@ Two paired-end FASTQ files: `M2CH_S1_L002_R1_001.fastq.gz` and `M2CH_S1_L002_R2_
 
 ---
 
-### Part 1 — Data Preprocessing (~2 hrs)
+### Part 1 — Data Preprocessing
 
 **Tools:** FastQC · Trim Galore
 
@@ -103,7 +103,7 @@ See [`scripts/01_fastqc_pre.sh`](scripts/01_fastqc_pre.sh), [`scripts/02_trim_ga
 
 ---
 
-### Part 2 — Host Read Removal (~1–2 hrs)
+### Part 2 — Host Read Removal
 
 **Tools:** Bowtie2 · Samtools
 
@@ -129,7 +129,7 @@ See [`scripts/04_bowtie2_host_removal.sh`](scripts/04_bowtie2_host_removal.sh)
 
 ---
 
-### Part 3 — Metagenome Assembly (~40 min – 8 hrs)
+### Part 3 — Metagenome Assembly
 
 **Tools:** MEGAHIT · MetaSPAdes
 
@@ -153,7 +153,7 @@ See [`scripts/05_megahit_assembly.sh`](scripts/05_megahit_assembly.sh), [`script
 
 ---
 
-### Part 4 — Binning and Bin Refinement (~3.5 hrs)
+### Part 4 — Binning and Bin Refinement
 
 **Tools:** MetaWRAP (MetaBAT2 + MaxBin2 + CONCOCT)
 
@@ -180,7 +180,7 @@ See [`scripts/07_metawrap_binning.sh`](scripts/07_metawrap_binning.sh)
 
 ---
 
-### Part 5 — MAG Quality Assessment (~30 min)
+### Part 5 — MAG Quality Assessment
 
 **Tool:** CheckM2
 
@@ -197,7 +197,7 @@ See [`scripts/08_checkm2.sh`](scripts/08_checkm2.sh)
 
 ---
 
-### Part 6 — Taxonomic Annotation (~1–2 hrs)
+### Part 6 — Taxonomic Annotation
 
 **Tool:** GTDB-Tk v1.5 (Genome Taxonomy Database)
 
@@ -213,7 +213,7 @@ See [`scripts/09_gtdbtk.sh`](scripts/09_gtdbtk.sh)
 
 ---
 
-### Part 7 — Gene Prediction & Functional Annotation (~8 hrs)
+### Part 7 — Gene Prediction & Functional Annotation
 
 **Tool:** DRAM v1.2 (Distilled and Refined Annotation of Metabolism)
 
@@ -271,10 +271,6 @@ module load <tool>        # load a module
 module unload <tool>      # unload before loading next (avoid conflicts)
 ```
 
-> ⚠️ **Never run compute-heavy jobs on the login node.** Always use SLURM `sbatch` scripts.
-
-Available HCC software: https://hcc.unl.edu/docs/applications/modules/available_software_for_swan/
-
 ---
 
 ## 📊 Expected Outputs
@@ -305,17 +301,3 @@ Available HCC software: https://hcc.unl.edu/docs/applications/modules/available_
 
 ---
 
-## 👥 Authors
-
-**Course Project 2 — Department of Food Science and Technology, University of Nebraska-Lincoln**
-
-- Dr. Xuehuan Feng (Postdoc)
-- Xinpeng Zhang (PhD student)
-- Numan Islam (PhD student)
-- PI: Dr. Yanbin Yin
-
----
-
-## 📄 License
-
-This project is for educational use as part of a graduate bioinformatics course. Scripts are provided as-is for learning purposes.
